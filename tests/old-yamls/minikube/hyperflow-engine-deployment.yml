@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: hyperflow
-        image: hyperflowwms/hyperflow:v1.4.3
+        image: hyperflowwms/hyperflow:v1.5.2
         imagePullPolicy: Always
         env:
         - name: REDIS_URL
           # Change that value to reflect your and namespace and cluster FQDN
-          value: redis://redis.default.svc.cluster.local:6379
+          value: redis://10.100.251.9:6379
         - name: HF_VAR_function
           # The source of this function can be found here
           # https://github.com/hyperflow-wms/hyperflow/blob/master/functions/k8sCommand.js
@@ -29,10 +29,12 @@ spec:
         - name: HF_VAR_JOB_TEMPLATE_PATH
           value: "/opt/hyperflow/job-template.yaml"
         - name: HF_VAR_WORKER_CONTAINER
+          value: "hyperflowwms/soykb-worker"
           # value: "hyperflowwms/soykb-workflow-worker:v1.0.10-1-g95b7caf"
-          #value: "cano601/soykb-workflow:latest" # SoyKB with file block access monitoring
-          #value: "matplinta/montage-workflow-worker:exec1.0.13"
-          value: "hyperflowwms/montage2-worker:je-v1.1.1"
+          # value: "cano601/soykb-workflow:latest" # SoyKB with file block access monitoring
+          # value: "matplinta/montage-workflow-worker:exec1.0.13"
+          # value: "hyperflowwms/montage2-worker:je-v1.1.1"
+          # value: hyperflowwms/montage-worker
         - name: HF_VAR_WORK_DIR
           value: "/work_dir"
         - name: HF_VAR_DEBUG
@@ -76,8 +78,8 @@ spec:
              subPath: job-template.yaml
              readOnly: true
       - name: hflow-tools
-        #image: matplinta/hflow-tools:latest
-        image: hyperflowwms/hflow-tools:1.2.2
+        image: matplinta/hflow-tools:latest
+        # image: hyperflowwms/hflow-tools:1.2.2
         imagePullPolicy: Always
         resources:
           requests:

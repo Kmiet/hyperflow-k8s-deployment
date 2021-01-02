@@ -38,8 +38,8 @@ spec:
           - name: workflow-data
             mountPath: "/workflow-data:shared"
       - name: workflow-data
-        #image: hyperflowwms/soykb-workflow-data:hyperflow-soykb-example-f6f69d6ca3ebd9fe2458804b59b4ef71
-        image: matplinta/montage-workflow-data:montage0.25-v2
+        image: hyperflowwms/soykb-workflow-data:hyperflow-soykb-example-f6f69d6ca3ebd9fe2458804b59b4ef71
+        # image: matplinta/montage-workflow-data:degree0.25
         #image: matplinta/montage2-workflow-data:degree1.0
         imagePullPolicy: Always
         command:
@@ -48,7 +48,7 @@ spec:
           - >
             mount -o bind /data /workflow-data ;
             sleep 3600000 ;
-        securityContext:
+        securityContext: 
           privileged: true
           capabilities:
             add:
