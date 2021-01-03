@@ -1,0 +1,10 @@
+1. usun security grupe
+2. usun file system
+
+file system stawiaj z aws cli
+
+aws efs create-file-system \
+--creation-token krzysiek-efs \
+--performance-mode generalPurpose \
+--throughput-mode bursting \
+--region us-east-1
