@@ -7,10 +7,10 @@ spec:
   - name: app2
     image: busybox
     command: ["/bin/sh"]
-    args: ["-c", "while true; do echo $(date -u) >> /data/out1.txt; sleep 15; done"]
+    args: ["-c", "while true; do echo $(date -u) >> /randomshit/out1.txt; sleep 15; done"]
     volumeMounts:
     - name: persistent-storage
-      mountPath: /data
+      mountPath: /randomshit
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:

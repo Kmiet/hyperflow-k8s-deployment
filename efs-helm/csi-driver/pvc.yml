@@ -18,12 +18,12 @@ spec:
   storageClassName: efs-sc
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: fs-91735064
+    volumeHandle: fs-6dcec198 #id of your efs file system
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: efs-claim
+  name: nfs #efs-claim - required by hyperflow to be named 'nfs'
 spec:
   accessModes:
     - ReadWriteMany

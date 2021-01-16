@@ -21,7 +21,7 @@ spec:
         env:
         - name: REDIS_URL
           # Change that value to reflect your and namespace and cluster FQDN
-          value: redis://10.100.251.9:6379
+          value: redis://10.100.171.239:6379
         - name: HF_VAR_function
           # The source of this function can be found here
           # https://github.com/hyperflow-wms/hyperflow/blob/master/functions/k8sCommand.js
@@ -38,7 +38,7 @@ spec:
         - name: HF_VAR_WORK_DIR
           value: "/work_dir"
         - name: HF_VAR_DEBUG
-          value: "1"
+          value: "0" # set to 0 if you want to run log & viz tools
         - name: HF_VAR_BACKOFF_LIMIT
           value: "0"
         - name: HF_VAR_STOP_WORKFLOW_WHEN_JOB_FAILED
@@ -105,3 +105,4 @@ spec:
       - name: workflow-data
         persistentVolumeClaim:
           claimName: nfs
+          # claimName: efs-claim
