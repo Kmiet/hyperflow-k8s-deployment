@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hyperflow
-        image: hyperflowwms/hyperflow:v1.5.2
+        image: hyperflowwms/hyperflow:v1.5.6
         imagePullPolicy: Always
         resources:
           requests:
@@ -28,7 +28,7 @@ spec:
         env:
         - name: REDIS_URL
           # Change that value to reflect your and namespace and cluster FQDN
-          value: redis://redis.default.svc.cluster.local:6379
+          value: redis://10.100.171.239:6379
         - name: HF_VAR_function
           # The source of this function can be found here
           # https://github.com/hyperflow-wms/hyperflow/blob/master/functions/kubernetes/k8sCommand.js
@@ -43,7 +43,7 @@ spec:
         - name: HF_VAR_WORK_DIR
           value: "/work_dir"
         - name: HF_VAR_DEBUG
-          value: "0"
+          value: "1" # set to 0 if you want to run log & viz tools
         - name: HF_VAR_BACKOFF_LIMIT
           value: "0"
         - name: HF_VAR_STOP_WORKFLOW_WHEN_JOB_FAILED

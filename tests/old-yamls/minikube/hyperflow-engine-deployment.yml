@@ -38,7 +38,7 @@ spec:
         - name: HF_VAR_WORK_DIR
           value: "/work_dir"
         - name: HF_VAR_DEBUG
-          value: "0" # set to 0 if you want to run log & viz tools
+          value: "1" # set to 0 if you want to run log & viz tools
         - name: HF_VAR_BACKOFF_LIMIT
           value: "0"
         - name: HF_VAR_STOP_WORKFLOW_WHEN_JOB_FAILED

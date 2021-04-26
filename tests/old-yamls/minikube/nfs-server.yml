@@ -35,10 +35,7 @@ spec:
         securityContext:
           privileged: true
         volumeMounts:
-          - mountPath: "/randomshit"
-            name: efs-data
           - name: workflow-data
-            # mountPath: "/randomshit"
             mountPath: "/workflow-data:shared"
       - name: workflow-data
         image: hyperflowwms/soykb-workflow-data:hyperflow-soykb-example-f6f69d6ca3ebd9fe2458804b59b4ef71
@@ -67,11 +64,6 @@ spec:
         volumeMounts:
           - mountPath: /workflow-data:shared
             name: workflow-data
-          - mountPath: "/randomshit"
-            name: efs-data
       volumes:
-      - name: efs-data
-        persistentVolumeClaim:
-          claimName: efs-claim
       - name: workflow-data
         emptyDir: {}
