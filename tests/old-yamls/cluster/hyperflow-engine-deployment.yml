@@ -55,7 +55,7 @@ spec:
         - name: HF_VAR_SCHEDULER_SERVICE_HOST
           value: "10.100.0.214"
         - name: HF_VAR_DRY_RUN
-          value: 1
+          value: "1"
         - name: HF_VAR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -89,7 +89,7 @@ spec:
            - name: config-map
              mountPath: /opt/hyperflow/job-template.yaml
              subPath: job-template.yaml
-             readOnly: true
+             # readOnly: true
       - name: hflow-tools
         image: matplinta/hflow-tools:latest
         imagePullPolicy: Always
