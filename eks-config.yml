@@ -18,5 +18,13 @@ nodeGroups:
     labels: { nodetype: worker2 }
     instanceType: m5.xlarge
     desiredCapacity: 1
+  # - name: hyperflow-worker-3
+  #   labels: { nodetype: worker3 }
+  #   instanceType: m5.xlarge
+  #   desiredCapacity: 1
+  # - name: hyperflow-worker-4
+  #   labels: { nodetype: worker4 }
+  #   instanceType: m5.xlarge
+  #   desiredCapacity: 1
     # normally label for worker nodes is just "worker"
     # aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 329701247918.dkr.ecr.us-east-1.amazonaws.com/krzysiek-ecr
