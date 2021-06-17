@@ -8,3 +8,6 @@ kubectl apply -f tests/old-yamls/cluster/nfs-server.yml #&&
 # kubectl apply -f tests/old-yamls/cluster/hyperflow-engine-deployment.yml
 # kubectl apply -f tests/old-yamls/cluster/parser-job.yml
 # kubectl apply -f tests/old-yamls/cluster/viz-trace-job.yml
+
+
+# kubectl delete -f tests/old-yamls/cluster/hyperflow-engine-deployment.yml

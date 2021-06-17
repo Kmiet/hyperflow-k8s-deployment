@@ -17,7 +17,7 @@ spec:
       containers:
       - name: hyperflow
         image: hyperflowwms/hyperflow:v1.5.7
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: 1.5
@@ -49,11 +49,25 @@ spec:
         - name: HF_VAR_CPU_REQUEST
           value: "0.7" # change for experiments
         - name: HF_VAR_MEM_REQUEST
-          value: "500Mi" # change for experiments
+          value: "500Mi" # change for experiments?
+        # - name: HF_VAR_SCHEDULER_SERVICE_HOST
+        #   value: "10.100.0.214"
+        # - name: HF_VAR_SCHEDULER_ALGORITHM
+        #   value: "HEFT"
         - name: HF_VAR_SCHEDULER_SERVICE_HOST
-          value: "10.100.0.214"
-        - name: HF_VAR_DRY_RUN
-          value: "1"
+          value: "10.100.0.213"
+        - name: HF_VAR_SCHEDULER_ALGORITHM
+          value: "PEFT"
+        # - name: HF_VAR_SCHEDULER_ALGORITHM
+        #   value: "EMPTY"
+        # - name: HF_VAR_SCHEDULER_AGGLOMERATION_TYPE
+        #   value: "NONE"
+        - name: HF_VAR_SCHEDULER_AGGLOMERATION_TYPE
+          value: "FUNC"
+        # - name: HF_VAR_SCHEDULER_AGGLOMERATION_TYPE
+        #   value: "PHASE-OPT"
+        # - name: HF_VAR_DRY_RUN
+        #   value: "1"
         - name: HF_VAR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -90,7 +104,7 @@ spec:
              # readOnly: true
       - name: hflow-tools
         image: matplinta/hflow-tools:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: 0 

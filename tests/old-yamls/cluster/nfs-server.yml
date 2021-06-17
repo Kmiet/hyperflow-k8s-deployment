@@ -41,7 +41,7 @@ spec:
         # image: hyperflowwms/soykb-workflow-data:hyperflow-soykb-example-f6f69d6ca3ebd9fe2458804b59b4ef71
         image: hyperflowwms/montage2-workflow-data:montage2-2mass-025-latest
         # image: hyperflowwms/montage2-workflow-data:montage2-3.0-latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         command:
           - "/bin/sh"
           - "-c"

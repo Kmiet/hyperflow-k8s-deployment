@@ -13,7 +13,7 @@ spec:
       containers:
       - name: parser
         image: hyperflowwms/log-parser:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: 0 
