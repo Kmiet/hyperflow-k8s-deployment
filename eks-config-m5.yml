@@ -5,6 +5,8 @@ metadata:
   name: dev-cluster-2
   region: us-east-1
 
+availabilityZones: ["us-east-1d",  "us-east-1f"]
+
 nodeGroups:
   - name: hyperflow-engine
     labels: { nodetype: hfmaster }
